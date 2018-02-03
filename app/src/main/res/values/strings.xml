@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">SocialNetwork</string>
     <string name="splash_text_view">Social Network Name here</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">пароль</string>
+    <string name="enter">войти</string>
+    <string name="register">зарегистрироваться</string>
+    <string name="warning">внимание</string>
+    <string name="login_empty_fileds_dialog_message">необходимо заполнить все поля</string>
+    <string name="ok">ок</string>
 </resources>

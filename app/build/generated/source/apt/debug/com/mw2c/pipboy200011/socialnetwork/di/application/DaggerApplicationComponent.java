@@ -1,18 +1,26 @@
 package com.mw2c.pipboy200011.socialnetwork.di.application;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import com.mw2c.pipboy200011.socialnetwork.data.repository.ILoginRepository;
 import com.mw2c.pipboy200011.socialnetwork.data.repository.ISplashRepository;
-import com.mw2c.pipboy200011.socialnetwork.di.RxModule;
-import com.mw2c.pipboy200011.socialnetwork.di.RxModule_ProvideRxSchedulersUtilsFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginModule;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginComponent;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideLoginInteractorFactory;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideLoginPresenterFactory;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideLoginRepositoryFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule_ProvideSplashInteractorFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule_ProvideSplashPresenterFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule_ProvideSplashRepositoryFactory;
+import com.mw2c.pipboy200011.socialnetwork.domain.LoginInteractor;
 import com.mw2c.pipboy200011.socialnetwork.domain.SplashInteractor;
-import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.ISplashPresenter;
+import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.LoginPresenter;
+import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.SplashPresenter;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity_MembersInjector;
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.SplashActivity;
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.SplashActivity_MembersInjector;
 import com.mw2c.pipboy200011.socialnetwork.utils.rx.IRxSchedulersUtils;
@@ -20,6 +28,7 @@ import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
+import retrofit2.Retrofit;
 
 @Generated(
   value = "dagger.internal.codegen.ComponentProcessor",
@@ -27,6 +36,8 @@ import javax.inject.Provider;
 )
 public final class DaggerApplicationComponent implements ApplicationComponent {
   private Provider<IRxSchedulersUtils> provideRxSchedulersUtilsProvider;
+
+  private Provider<Retrofit> provideRetrofitProvider;
 
   private DaggerApplicationComponent(Builder builder) {
     initialize(builder);
@@ -44,6 +55,8 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   private void initialize(final Builder builder) {
     this.provideRxSchedulersUtilsProvider =
         DoubleCheck.provider(RxModule_ProvideRxSchedulersUtilsFactory.create(builder.rxModule));
+    this.provideRetrofitProvider =
+        DoubleCheck.provider(NetworkModule_ProvideRetrofitFactory.create(builder.networkModule));
   }
 
   @Override
@@ -54,11 +67,16 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   public static final class Builder {
     private RxModule rxModule;
 
+    private NetworkModule networkModule;
+
     private Builder() {}
 
     public ApplicationComponent build() {
       if (rxModule == null) {
         this.rxModule = new RxModule();
+      }
+      if (networkModule == null) {
+        this.networkModule = new NetworkModule();
       }
       return new DaggerApplicationComponent(this);
     }
@@ -77,6 +95,11 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
       this.rxModule = Preconditions.checkNotNull(rxModule);
       return this;
     }
+
+    public Builder networkModule(NetworkModule networkModule) {
+      this.networkModule = Preconditions.checkNotNull(networkModule);
+      return this;
+    }
   }
 
   private final class PreLoginComponentImpl implements PreLoginComponent {
@@ -89,6 +112,11 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
     @Override
     public SplashComponent.Builder getSplashComponentBuilder() {
       return new SplashComponentBuilder();
+    }
+
+    @Override
+    public LoginComponent.Builder getLoginComponentBuilder() {
+      return new LoginComponentBuilder();
     }
 
     private final class SplashComponentBuilder implements SplashComponent.Builder {
@@ -114,7 +142,7 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
 
       private Provider<SplashInteractor> provideSplashInteractorProvider;
 
-      private Provider<ISplashPresenter> provideSplashPresenterProvider;
+      private Provider<SplashPresenter> provideSplashPresenterProvider;
 
       private SplashComponentImpl(SplashComponentBuilder builder) {
         initialize(builder);
@@ -146,6 +174,66 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
       private SplashActivity injectSplashActivity(SplashActivity instance) {
         SplashActivity_MembersInjector.injectMSplashPresenter(
             instance, provideSplashPresenterProvider.get());
+        return instance;
+      }
+    }
+
+    private final class LoginComponentBuilder implements LoginComponent.Builder {
+      private LoginModule loginModule;
+
+      @Override
+      public LoginComponent build() {
+        if (loginModule == null) {
+          this.loginModule = new LoginModule();
+        }
+        return new LoginComponentImpl(this);
+      }
+
+      @Override
+      public LoginComponentBuilder makeLoginModule(LoginModule module) {
+        this.loginModule = Preconditions.checkNotNull(module);
+        return this;
+      }
+    }
+
+    private final class LoginComponentImpl implements LoginComponent {
+      private Provider<ILoginRepository> provideLoginRepositoryProvider;
+
+      private Provider<LoginInteractor> provideLoginInteractorProvider;
+
+      private Provider<LoginPresenter> provideLoginPresenterProvider;
+
+      private LoginComponentImpl(LoginComponentBuilder builder) {
+        initialize(builder);
+      }
+
+      @SuppressWarnings("unchecked")
+      private void initialize(final LoginComponentBuilder builder) {
+        this.provideLoginRepositoryProvider =
+            DoubleCheck.provider(
+                LoginModule_ProvideLoginRepositoryFactory.create(
+                    builder.loginModule, DaggerApplicationComponent.this.provideRetrofitProvider));
+        this.provideLoginInteractorProvider =
+            DoubleCheck.provider(
+                LoginModule_ProvideLoginInteractorFactory.create(
+                    builder.loginModule, provideLoginRepositoryProvider));
+        this.provideLoginPresenterProvider =
+            DoubleCheck.provider(
+                LoginModule_ProvideLoginPresenterFactory.create(
+                    builder.loginModule,
+                    provideLoginInteractorProvider,
+                    DaggerApplicationComponent.this.provideRxSchedulersUtilsProvider));
+      }
+
+      @Override
+      public void inject(LoginActivity activity) {
+        injectLoginActivity(activity);
+      }
+
+      @CanIgnoreReturnValue
+      private LoginActivity injectLoginActivity(LoginActivity instance) {
+        LoginActivity_MembersInjector.injectMLoginPresenter(
+            instance, provideLoginPresenterProvider.get());
         return instance;
       }
     }

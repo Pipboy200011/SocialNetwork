@@ -10,9 +10,9 @@
 
     <ImageView
         android:id="@+id/splash_logo_image_view"
-        android:layout_width="@dimen/splash_logo_size"
-        android:layout_height="@dimen/splash_logo_size"
-        android:layout_marginTop="@dimen/big_margin"
+        android:layout_width="@dimen/size_200_dp"
+        android:layout_height="@dimen/size_200_dp"
+        android:layout_marginTop="@dimen/size_72_dp"
         android:contentDescription="@string/splash_text_view"
         android:src="@mipmap/splash_logo"
         app:layout_constraintLeft_toLeftOf="parent"

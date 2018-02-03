@@ -1,5 +1,6 @@
 package com.mw2c.pipboy200011.socialnetwork.di.prelogin;
 
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashComponent;
 
 import dagger.Subcomponent;
@@ -13,4 +14,6 @@ import dagger.Subcomponent;
 public interface PreLoginComponent {
 
     SplashComponent.Builder getSplashComponentBuilder();
+
+    LoginComponent.Builder getLoginComponentBuilder();
 }

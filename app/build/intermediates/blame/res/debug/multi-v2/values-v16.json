@@ -1,40 +1,6 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetwork/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
-            "map": [
-                {
-                    "source": "/Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d37c0807b24dd948042cfc5c353e071e/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "/Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/818251e284094224f5a840dbc130c217/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "223"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "121",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "289"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {

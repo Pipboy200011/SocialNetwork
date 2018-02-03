@@ -2,10 +2,11 @@ package com.mw2c.pipboy200011.socialnetwork;
 
 import android.app.Application;
 
-import com.mw2c.pipboy200011.socialnetwork.di.RxModule;
 import com.mw2c.pipboy200011.socialnetwork.di.application.ApplicationComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.application.ApplicationModule;
 import com.mw2c.pipboy200011.socialnetwork.di.application.DaggerApplicationComponent;
+import com.mw2c.pipboy200011.socialnetwork.di.application.NetworkModule;
+import com.mw2c.pipboy200011.socialnetwork.di.application.RxModule;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginModule;
 
@@ -26,6 +27,7 @@ public class SocialNetwork extends Application {
         sApplicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(sInstance))
                 .rxModule(new RxModule())
+                .networkModule(new NetworkModule())
                 .build();
     }
 

@@ -25,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity" >
+        </activity>
 
         <meta-data
             android:name="android.support.VERSION"

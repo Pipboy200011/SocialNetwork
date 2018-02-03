@@ -3,7 +3,6 @@ package com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash;
 import com.mw2c.pipboy200011.socialnetwork.data.repository.ISplashRepository;
 import com.mw2c.pipboy200011.socialnetwork.data.repository.SplashRepository;
 import com.mw2c.pipboy200011.socialnetwork.domain.SplashInteractor;
-import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.ISplashPresenter;
 import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.SplashPresenter;
 import com.mw2c.pipboy200011.socialnetwork.utils.rx.IRxSchedulersUtils;
 
@@ -30,8 +29,8 @@ public class SplashModule {
 
     @Provides
     @SplashScope
-    ISplashPresenter provideSplashPresenter(SplashInteractor interactor,
-                                            IRxSchedulersUtils rxSchedulersUtils) {
+    SplashPresenter provideSplashPresenter(SplashInteractor interactor,
+                                           IRxSchedulersUtils rxSchedulersUtils) {
         return new SplashPresenter(interactor, rxSchedulersUtils);
     }
 }

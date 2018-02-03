@@ -3,7 +3,7 @@ package com.mw2c.pipboy200011.socialnetwork.presentation.presenter;
 import android.util.Log;
 
 import com.mw2c.pipboy200011.socialnetwork.domain.SplashInteractor;
-import com.mw2c.pipboy200011.socialnetwork.presentation.ui.ISplashView;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.view.ISplashView;
 import com.mw2c.pipboy200011.socialnetwork.utils.rx.IRxSchedulersUtils;
 
 import io.reactivex.disposables.Disposable;
@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable;
  * Created by Pavel Apanovskiy on 03.02.2018.
  */
 
-public class SplashPresenter implements ISplashPresenter {
+public class SplashPresenter extends BasePresenter<ISplashView> {
 
     private static final String TAG = "SplashPresenter";
 
@@ -20,7 +20,6 @@ public class SplashPresenter implements ISplashPresenter {
     private final IRxSchedulersUtils mRxSchedulersUtils;
 
     private Disposable mDownloadSomethingImportantDisposable;
-    private ISplashView mView;
 
     public SplashPresenter(SplashInteractor interactor,
                            IRxSchedulersUtils rxSchedulersUtils) {
@@ -29,36 +28,25 @@ public class SplashPresenter implements ISplashPresenter {
     }
 
     @Override
-    public void bindView(ISplashView view) {
-        mView = view;
-    }
-
-    @Override
-    public void unbindView() {
-        mView = null;
-    }
-
-    @Override
     public void destroyPresenter() {
         cancelDownloadSomethingImportant();
     }
 
-    @Override
     public void downloadSomethingImportant() {
         mDownloadSomethingImportantDisposable = mSplashInteractor.downloadSomethingImportant()
                 .subscribeOn(mRxSchedulersUtils.getIOScheduler())
                 .observeOn(mRxSchedulersUtils.getMainThreadScheduler())
                 .subscribe((result, throwable) -> {
                     if (throwable == null) {
-                        doSomethingElse(result);
+                        successConnect(result);
                     } else {
                         Log.e(TAG, "downloadSomethingImportant error " + throwable);
                     }
                 });
     }
 
-    private void doSomethingElse(Boolean result) {
-        mView.updateResult(result);
+    private void successConnect(Boolean result) {
+        getView().updateResult(result);
     }
 
     private void cancelDownloadSomethingImportant() {

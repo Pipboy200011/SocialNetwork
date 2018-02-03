@@ -1,7 +1,7 @@
 package com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash;
 
 import com.mw2c.pipboy200011.socialnetwork.domain.SplashInteractor;
-import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.ISplashPresenter;
+import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.SplashPresenter;
 import com.mw2c.pipboy200011.socialnetwork.utils.rx.IRxSchedulersUtils;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
@@ -12,7 +12,7 @@ import javax.inject.Provider;
   value = "dagger.internal.codegen.ComponentProcessor",
   comments = "https://google.github.io/dagger"
 )
-public final class SplashModule_ProvideSplashPresenterFactory implements Factory<ISplashPresenter> {
+public final class SplashModule_ProvideSplashPresenterFactory implements Factory<SplashPresenter> {
   private final SplashModule module;
 
   private final Provider<SplashInteractor> interactorProvider;
@@ -29,13 +29,13 @@ public final class SplashModule_ProvideSplashPresenterFactory implements Factory
   }
 
   @Override
-  public ISplashPresenter get() {
+  public SplashPresenter get() {
     return Preconditions.checkNotNull(
         module.provideSplashPresenter(interactorProvider.get(), rxSchedulersUtilsProvider.get()),
         "Cannot return null from a non-@Nullable @Provides method");
   }
 
-  public static Factory<ISplashPresenter> create(
+  public static Factory<SplashPresenter> create(
       SplashModule module,
       Provider<SplashInteractor> interactorProvider,
       Provider<IRxSchedulersUtils> rxSchedulersUtilsProvider) {
@@ -43,7 +43,7 @@ public final class SplashModule_ProvideSplashPresenterFactory implements Factory
         module, interactorProvider, rxSchedulersUtilsProvider);
   }
 
-  public static ISplashPresenter proxyProvideSplashPresenter(
+  public static SplashPresenter proxyProvideSplashPresenter(
       SplashModule instance, SplashInteractor interactor, IRxSchedulersUtils rxSchedulersUtils) {
     return instance.provideSplashPresenter(interactor, rxSchedulersUtils);
   }

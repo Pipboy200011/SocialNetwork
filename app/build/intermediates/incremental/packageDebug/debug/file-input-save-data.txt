@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Feb 03 17:58:02 MSK 2018
+#Sat Feb 03 21:45:10 MSK 2018
 2.base=/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/transforms/dexMerger/debug/14
 5.set=DEX
 0.path=classes.dex

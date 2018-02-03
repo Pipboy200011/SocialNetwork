@@ -20,4 +20,8 @@ public class SplashInjector {
         }
         return sSplashComponent;
     }
+
+    public static void cancelSplashComponent() {
+        sSplashComponent = null;
+    }
 }

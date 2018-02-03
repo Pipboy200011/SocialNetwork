@@ -1,6 +1,6 @@
 package com.mw2c.pipboy200011.socialnetwork.presentation.ui;
 
-import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.ISplashPresenter;
+import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.SplashPresenter;
 import dagger.MembersInjector;
 import javax.annotation.Generated;
 import javax.inject.Provider;
@@ -10,14 +10,14 @@ import javax.inject.Provider;
   comments = "https://google.github.io/dagger"
 )
 public final class SplashActivity_MembersInjector implements MembersInjector<SplashActivity> {
-  private final Provider<ISplashPresenter> mSplashPresenterProvider;
+  private final Provider<SplashPresenter> mSplashPresenterProvider;
 
-  public SplashActivity_MembersInjector(Provider<ISplashPresenter> mSplashPresenterProvider) {
+  public SplashActivity_MembersInjector(Provider<SplashPresenter> mSplashPresenterProvider) {
     this.mSplashPresenterProvider = mSplashPresenterProvider;
   }
 
   public static MembersInjector<SplashActivity> create(
-      Provider<ISplashPresenter> mSplashPresenterProvider) {
+      Provider<SplashPresenter> mSplashPresenterProvider) {
     return new SplashActivity_MembersInjector(mSplashPresenterProvider);
   }
 
@@ -27,7 +27,7 @@ public final class SplashActivity_MembersInjector implements MembersInjector<Spl
   }
 
   public static void injectMSplashPresenter(
-      SplashActivity instance, ISplashPresenter mSplashPresenter) {
+      SplashActivity instance, SplashPresenter mSplashPresenter) {
     instance.mSplashPresenter = mSplashPresenter;
   }
 }

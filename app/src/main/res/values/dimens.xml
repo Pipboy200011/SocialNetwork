@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="splash_logo_size">200dp</dimen>
-    <dimen name="big_margin">72dp</dimen>
+    <dimen name="size_0_dp">0dp</dimen>
+    <dimen name="size_8_dp">8dp</dimen>
+    <dimen name="size_16_dp">16dp</dimen>
+    <dimen name="size_24_dp">24dp</dimen>
+    <dimen name="size_40_dp">40dp</dimen>
+    <dimen name="size_48_dp">48dp</dimen>
+    <dimen name="size_56_dp">56dp</dimen>
+    <dimen name="size_72_dp">72dp</dimen>
+    <dimen name="size_100_dp">100dp</dimen>
+    <dimen name="size_200_dp">200dp</dimen>
 </resources>

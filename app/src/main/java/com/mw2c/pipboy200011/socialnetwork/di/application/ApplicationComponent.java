@@ -1,6 +1,5 @@
 package com.mw2c.pipboy200011.socialnetwork.di.application;
 
-import com.mw2c.pipboy200011.socialnetwork.di.RxModule;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginModule;
 
@@ -12,7 +11,7 @@ import dagger.Component;
  * Created by Pavel Apanovskiy on 19.11.2017.
  */
 
-@Component(modules = {ApplicationModule.class, RxModule.class})
+@Component(modules = {ApplicationModule.class, RxModule.class, NetworkModule.class})
 @Singleton
 public interface ApplicationComponent {
 
