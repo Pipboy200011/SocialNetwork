@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mw2c.pipboy200011.socialnetwork.presentation.ui.SplashActivity">
+
+
+    <ImageView
+        android:id="@+id/splash_logo_image_view"
+        android:layout_width="@dimen/splash_logo_size"
+        android:layout_height="@dimen/splash_logo_size"
+        android:layout_marginTop="@dimen/big_margin"
+        android:contentDescription="@string/splash_text_view"
+        android:src="@mipmap/splash_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_text_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/splash_logo_image_view"/>
+
+</android.support.constraint.ConstraintLayout>

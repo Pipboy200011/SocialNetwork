@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SocialNetwork</string>
+    <string name="splash_text_view">Social Network Name here</string>
+</resources>
