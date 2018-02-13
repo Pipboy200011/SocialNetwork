@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,8 @@ import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginInjector;
 import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.RegistrationPresenter;
 
 import javax.inject.Inject;
+
+import retrofit2.Response;
 
 /**
  * Created by Pavel Apanovskiy on 11.02.2018.
@@ -78,8 +79,6 @@ public class RegistrationFragment extends Fragment implements IRegistrationView 
 
     @Override
     public void showEmptyFieldsError() {
-        Log.d("happy","important "+getActivity().getLocalClassName());
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(R.string.warning);
         builder.setMessage(R.string.login_empty_fileds_dialog_message);
@@ -95,8 +94,7 @@ public class RegistrationFragment extends Fragment implements IRegistrationView 
     }
 
     @Override
-    public void showResult(String result) {
-        Log.d("happy", "result " + result);
+    public void showResult(Response<String> result) {
     }
 
     private View.OnClickListener registrationButtonClickListener = new View.OnClickListener() {

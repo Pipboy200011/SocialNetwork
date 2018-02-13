@@ -3,11 +3,13 @@ package com.mw2c.pipboy200011.socialnetwork.presentation.presenter;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.mw2c.pipboy200011.socialnetwork.Screens;
 import com.mw2c.pipboy200011.socialnetwork.domain.RegistrationInteractor;
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.IRegistrationView;
 import com.mw2c.pipboy200011.socialnetwork.utils.rx.IRxSchedulersUtils;
 
 import io.reactivex.disposables.Disposable;
+import retrofit2.Response;
 import ru.terrakok.cicerone.Router;
 
 /**
@@ -60,6 +62,7 @@ public class RegistrationPresenter extends BasePresenter<IRegistrationView> {
                         } else {
                             Log.e(TAG, "registration error " + throwable);
                         }
+                        mRouter.newRootScreen(Screens.LOGIN_SCREEN);
                     });
         } else {
             getView().showEmptyFieldsError();
@@ -67,7 +70,7 @@ public class RegistrationPresenter extends BasePresenter<IRegistrationView> {
 
     }
 
-    private void registrationSuccess(String result) {
+    private void registrationSuccess(Response<String> result) {
         getView().showResult(result);
     }
 

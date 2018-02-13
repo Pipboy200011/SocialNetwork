@@ -3,6 +3,7 @@ package com.mw2c.pipboy200011.socialnetwork.domain;
 import com.mw2c.pipboy200011.socialnetwork.data.repository.IRegistrationRepository;
 
 import io.reactivex.Single;
+import retrofit2.Response;
 
 /**
  * Created by Pavel Apanovskiy on 11.02.2018.
@@ -16,10 +17,10 @@ public class RegistrationInteractor {
         mRegistrationRepository = repository;
     }
 
-    public Single<String> register(String name,
-                                   String surname,
-                                   String mail,
-                                   String password) {
+    public Single<Response<String>> register(String name,
+                                             String surname,
+                                             String mail,
+                                             String password) {
         return mRegistrationRepository.register(
                 name,
                 surname,

@@ -4,6 +4,7 @@ import com.mw2c.pipboy200011.socialnetwork.data.api.SocialNetworkApi;
 import com.mw2c.pipboy200011.socialnetwork.data.entity.SignUp;
 
 import io.reactivex.Single;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
@@ -19,10 +20,10 @@ public class RegistrationRepository implements IRegistrationRepository {
     }
 
     @Override
-    public Single<String> register(String name,
-                                   String surname,
-                                   String mail,
-                                   String password) {
+    public Single<Response<String>> register(String name,
+                                             String surname,
+                                             String mail,
+                                             String password) {
 
         SignUp signUp = new SignUp(name, surname, mail, password);
 

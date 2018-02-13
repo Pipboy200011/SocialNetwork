@@ -33,8 +33,7 @@ public class LoginRepository implements ILoginRepository {
 
     private String getLoginData(String mail, String password) {
         byte[] loginByte = (mail + ":" + password).getBytes();
-        byte[] encode = Base64.encode(loginByte, Base64.DEFAULT);
-        String login = new String(encode);
+        String login = Base64.encodeToString(loginByte, Base64.NO_WRAP);
         return "Basic " + login;
     }
 

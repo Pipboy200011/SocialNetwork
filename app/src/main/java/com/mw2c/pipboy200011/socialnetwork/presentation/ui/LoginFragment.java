@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,8 +77,6 @@ public class LoginFragment extends Fragment implements ILoginView {
 
     @Override
     public void showEmptyFieldsError() {
-        Log.d("happy","important "+getActivity().getLocalClassName());
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(R.string.warning);
         builder.setMessage(R.string.login_empty_fileds_dialog_message);
@@ -96,7 +93,6 @@ public class LoginFragment extends Fragment implements ILoginView {
 
     @Override
     public void showResult(Login result) {
-        Log.d("happy", "result " + result);
     }
 
     private View.OnClickListener enterButtonClickListener() {
