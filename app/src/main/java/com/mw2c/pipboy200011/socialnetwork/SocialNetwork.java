@@ -8,8 +8,10 @@ import com.mw2c.pipboy200011.socialnetwork.di.application.DaggerApplicationCompo
 import com.mw2c.pipboy200011.socialnetwork.di.application.NavigationModule;
 import com.mw2c.pipboy200011.socialnetwork.di.application.NetworkModule;
 import com.mw2c.pipboy200011.socialnetwork.di.application.RxModule;
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginComponent;
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginModule;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.NotRegisteredComponent;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.NotRegisteredModule;
+import com.mw2c.pipboy200011.socialnetwork.di.registered.RegisteredComponent;
+import com.mw2c.pipboy200011.socialnetwork.di.registered.RegisteredModule;
 
 /**
  * Created by Pavel Apanovskiy on 03.02.2018.
@@ -19,7 +21,8 @@ public class SocialNetwork extends Application {
 
     private static SocialNetwork sInstance;
     private static ApplicationComponent sApplicationComponent;
-    private static PreLoginComponent sPreLoginComponent;
+    private static NotRegisteredComponent sNotRegisteredComponent;
+    private static RegisteredComponent sRegisteredComponent;
 
     @Override
     public void onCreate() {
@@ -42,10 +45,17 @@ public class SocialNetwork extends Application {
         return sApplicationComponent;
     }
 
-    public PreLoginComponent getPreLoginComponent() {
-        if (sPreLoginComponent == null) {
-            sPreLoginComponent = getApplicationComponent().getPreLoginComponent(new PreLoginModule());
+    public NotRegisteredComponent getNotRegisteredComponent() {
+        if (sNotRegisteredComponent == null) {
+            sNotRegisteredComponent = getApplicationComponent().getNotRegisteredComponent(new NotRegisteredModule());
         }
-        return sPreLoginComponent;
+        return sNotRegisteredComponent;
+    }
+
+    public RegisteredComponent getRegisteredComponent() {
+        if (sRegisteredComponent == null) {
+            sRegisteredComponent = getApplicationComponent().getRegisteredComponent(new RegisteredModule());
+        }
+        return sRegisteredComponent;
     }
 }

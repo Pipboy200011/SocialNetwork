@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.mw2c.pipboy200011.socialnetwork.R;
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginInjector;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.login.LoginInjector;
 import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.RegistrationPresenter;
 
 import javax.inject.Inject;

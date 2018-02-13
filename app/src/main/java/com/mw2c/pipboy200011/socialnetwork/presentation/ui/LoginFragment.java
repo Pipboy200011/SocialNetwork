@@ -12,10 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mw2c.pipboy200011.socialnetwork.R;
 import com.mw2c.pipboy200011.socialnetwork.data.entity.Login;
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginInjector;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.login.LoginInjector;
 import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.LoginPresenter;
 
 import javax.inject.Inject;
@@ -93,6 +94,8 @@ public class LoginFragment extends Fragment implements ILoginView {
 
     @Override
     public void showResult(Login result) {
+        Toast.makeText(getActivity(), "success login", Toast.LENGTH_SHORT).show();
+        startActivity(MainActivity.newInstance(getActivity()));
     }
 
     private View.OnClickListener enterButtonClickListener() {

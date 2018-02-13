@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.mw2c.pipboy200011.socialnetwork.R;
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashInjector;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.splash.SplashInjector;
 import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.SplashPresenter;
 
 import javax.inject.Inject;

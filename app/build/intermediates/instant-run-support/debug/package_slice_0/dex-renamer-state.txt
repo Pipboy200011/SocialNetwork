@@ -1,4 +1,4 @@
-#Sat Feb 10 21:01:01 MSK 2018
+#Tue Feb 13 22:20:06 MSK 2018
 base.0=/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/transforms/dexMerger/debug/1
 path.0=classes.dex
 renamed.0=classes.dex

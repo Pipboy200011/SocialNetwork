@@ -21,6 +21,10 @@
         </activity>
         <activity android:name=".presentation.ui.LoginActivity">
         </activity>
+        <activity
+            android:name=".presentation.ui.MainActivity"
+            android:label="@string/title_activity_main">
+        </activity>
     </application>
 
 </manifest>

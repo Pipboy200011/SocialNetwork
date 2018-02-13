@@ -1,7 +1,9 @@
 package com.mw2c.pipboy200011.socialnetwork.di.application;
 
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginComponent;
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginModule;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.NotRegisteredComponent;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.NotRegisteredModule;
+import com.mw2c.pipboy200011.socialnetwork.di.registered.RegisteredComponent;
+import com.mw2c.pipboy200011.socialnetwork.di.registered.RegisteredModule;
 
 import javax.inject.Singleton;
 
@@ -15,6 +17,7 @@ import dagger.Component;
 @Singleton
 public interface ApplicationComponent {
 
-    PreLoginComponent getPreLoginComponent(PreLoginModule preLoginModule);
+    NotRegisteredComponent getNotRegisteredComponent(NotRegisteredModule notRegisteredModule);
 
+    RegisteredComponent getRegisteredComponent(RegisteredModule registeredModule);
 }

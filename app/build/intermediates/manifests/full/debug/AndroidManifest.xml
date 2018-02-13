@@ -29,6 +29,10 @@
         </activity>
         <activity android:name="com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity" >
         </activity>
+        <activity
+            android:name="com.mw2c.pipboy200011.socialnetwork.presentation.ui.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
 
         <meta-data
             android:name="android.support.VERSION"

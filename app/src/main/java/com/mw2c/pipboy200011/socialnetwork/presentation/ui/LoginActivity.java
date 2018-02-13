@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.mw2c.pipboy200011.socialnetwork.R;
 import com.mw2c.pipboy200011.socialnetwork.Screens;
-import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginInjector;
+import com.mw2c.pipboy200011.socialnetwork.di.notregistered.login.LoginInjector;
 
 import javax.inject.Inject;
 
