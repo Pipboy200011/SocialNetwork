@@ -1,6 +1,8 @@
 package com.mw2c.pipboy200011.socialnetwork.di.prelogin.login;
 
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginFragment;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.RegistrationFragment;
 
 import dagger.Subcomponent;
 
@@ -19,4 +21,8 @@ public interface LoginComponent {
     }
 
     void inject(LoginActivity activity);
+
+    void inject(LoginFragment fragment);
+
+    void inject(RegistrationFragment fragment);
 }

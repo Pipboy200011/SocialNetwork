@@ -9,9 +9,6 @@ import io.reactivex.Single;
 public class SplashRepository implements ISplashRepository {
     @Override
     public Single<Boolean> downloadSomethingImportant() {
-        return Single.fromCallable(() -> {
-            Thread.sleep(2000);
-            return true;
-        });
+        return Single.fromCallable(() -> true);
     }
 }

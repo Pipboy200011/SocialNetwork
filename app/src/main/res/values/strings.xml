@@ -8,4 +8,6 @@
     <string name="warning">внимание</string>
     <string name="login_empty_fileds_dialog_message">необходимо заполнить все поля</string>
     <string name="ok">ок</string>
+    <string name="name">имя</string>
+    <string name="surname">фамилия</string>
 </resources>

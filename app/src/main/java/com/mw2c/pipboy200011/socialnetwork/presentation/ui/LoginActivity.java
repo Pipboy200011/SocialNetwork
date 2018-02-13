@@ -3,28 +3,30 @@ package com.mw2c.pipboy200011.socialnetwork.presentation.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mw2c.pipboy200011.socialnetwork.R;
+import com.mw2c.pipboy200011.socialnetwork.Screens;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginInjector;
-import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.LoginPresenter;
-import com.mw2c.pipboy200011.socialnetwork.presentation.ui.view.ILoginView;
 
 import javax.inject.Inject;
 
-public class LoginActivity extends AppCompatActivity implements ILoginView {
+import ru.terrakok.cicerone.Navigator;
+import ru.terrakok.cicerone.NavigatorHolder;
+import ru.terrakok.cicerone.android.SupportFragmentNavigator;
+import ru.terrakok.cicerone.commands.Command;
+import ru.terrakok.cicerone.commands.Replace;
+
+public class LoginActivity extends AppCompatActivity {
 
     @Inject
-    LoginPresenter mLoginPresenter;
-    private EditText mMailEditText;
-    private EditText mPasswordEditText;
+    NavigatorHolder mNavigatorHolder;
 
-    public static Intent newIntent(Context context) {
+    private Navigator mNavigator;
+
+    public static Intent newInstance(Context context) {
         return new Intent(context, LoginActivity.class);
     }
 
@@ -33,47 +35,55 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         LoginInjector.getLoginComponent().inject(this);
-        findViews();
+
+        mNavigator = new SupportFragmentNavigator(getSupportFragmentManager(), R.id.login_container) {
+
+            @Override
+            protected Fragment createFragment(String screenKey, Object data) {
+                Fragment fragment;
+                switch (screenKey) {
+                    case Screens.REGISTRATION_SCREEN:
+                        fragment = RegistrationFragment.newInstance();
+                        break;
+                    default:
+                        fragment = LoginFragment.newInstance();
+                        break;
+
+                }
+                return fragment;
+            }
+
+            @Override
+            protected void showSystemMessage(String message) {
+                Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            protected void exit() {
+                finish();
+            }
+        };
+        mNavigator.applyCommands(new Command[]{new Replace(Screens.LOGIN_SCREEN, 1)});
+    }
+
+
+    @Override
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        mNavigatorHolder.setNavigator(mNavigator);
+    }
+
+    @Override
+    protected void onPause() {
+        mNavigatorHolder.removeNavigator();
+        super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        mLoginPresenter.unbindView();
-        mLoginPresenter.destroyPresenter();
         super.onDestroy();
         if (isFinishing()) {
             LoginInjector.clearLoginComponent();
         }
-    }
-
-    @Override
-    public void showEmptyFieldsError() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.warning);
-        builder.setMessage(R.string.login_empty_fileds_dialog_message);
-        builder.setPositiveButton(R.string.ok, null);
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
-
-    private void findViews() {
-        mMailEditText = findViewById(R.id.login_mail_edit_text);
-        mPasswordEditText = findViewById(R.id.login_password_edit_text);
-        Button enterButton = findViewById(R.id.login_button);
-        TextView registerTextView = findViewById(R.id.login_registration_text_view);
-
-        enterButton.setOnClickListener(enterButtonClickListener());
-        registerTextView.setOnClickListener(registerTextViewClickListener());
-
-        mLoginPresenter.bindView(this);
-    }
-
-    private View.OnClickListener enterButtonClickListener() {
-        return view -> mLoginPresenter.enterButtonClick(mMailEditText.getText().toString(),
-                mPasswordEditText.getText().toString());
-    }
-
-    private View.OnClickListener registerTextViewClickListener() {
-        return view -> mLoginPresenter.registerButtonClick();
     }
 }

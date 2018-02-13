@@ -1,7 +1,5 @@
 package com.mw2c.pipboy200011.socialnetwork.domain;
 
-import android.text.Editable;
-
 import com.mw2c.pipboy200011.socialnetwork.data.entity.Login;
 import com.mw2c.pipboy200011.socialnetwork.data.repository.ILoginRepository;
 

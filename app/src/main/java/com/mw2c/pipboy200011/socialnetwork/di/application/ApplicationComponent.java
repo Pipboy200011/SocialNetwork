@@ -11,7 +11,7 @@ import dagger.Component;
  * Created by Pavel Apanovskiy on 19.11.2017.
  */
 
-@Component(modules = {ApplicationModule.class, RxModule.class, NetworkModule.class})
+@Component(modules = {ApplicationModule.class, RxModule.class, NetworkModule.class, NavigationModule.class})
 @Singleton
 public interface ApplicationComponent {
 

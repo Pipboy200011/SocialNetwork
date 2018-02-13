@@ -1,80 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
-    api-level="23"
+    abi="x86"
+    api-level="27"
     build-mode="COLD"
-    density="xxhdpi"
+    density="420dpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.0.1"
-    timestamp="1517683496349"
+    timestamp="1518542312690"
     token="771264337131907838"
-    verifier="R_CLASS_CHANGE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2898" />
+        duration="2351" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="44" />
+        duration="55" />
     <task
         name="verifier"
-        duration="14" />
+        duration="57" />
 
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-        type="SPLIT" />
     <artifact
         location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
         type="SPLIT" />
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/outputs/apk/debug/app-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1517682979710"
+        timestamp="1518542242673"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
@@ -83,10 +63,7 @@
             location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
             location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/outputs/apk/debug/app-debug.apk"
@@ -94,35 +71,12 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1517683496349"
-        verifier="R_CLASS_CHANGE" >
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
+        ir-eligibility="COMPATIBLE"
+        timestamp="1518542312690"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/build/outputs/apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

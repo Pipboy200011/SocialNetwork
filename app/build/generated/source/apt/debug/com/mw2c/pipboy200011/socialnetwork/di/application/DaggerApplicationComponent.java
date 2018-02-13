@@ -2,6 +2,7 @@ package com.mw2c.pipboy200011.socialnetwork.di.application;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.mw2c.pipboy200011.socialnetwork.data.repository.ILoginRepository;
+import com.mw2c.pipboy200011.socialnetwork.data.repository.IRegistrationRepository;
 import com.mw2c.pipboy200011.socialnetwork.data.repository.ISplashRepository;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.PreLoginModule;
@@ -10,17 +11,26 @@ import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideLoginInteractorFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideLoginPresenterFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideLoginRepositoryFactory;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideRegistrationInteractorFactory;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideRegistrationPresenterFactory;
+import com.mw2c.pipboy200011.socialnetwork.di.prelogin.login.LoginModule_ProvideRegistrationRepositoryFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashComponent;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule_ProvideSplashInteractorFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule_ProvideSplashPresenterFactory;
 import com.mw2c.pipboy200011.socialnetwork.di.prelogin.splash.SplashModule_ProvideSplashRepositoryFactory;
 import com.mw2c.pipboy200011.socialnetwork.domain.LoginInteractor;
+import com.mw2c.pipboy200011.socialnetwork.domain.RegistrationInteractor;
 import com.mw2c.pipboy200011.socialnetwork.domain.SplashInteractor;
 import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.LoginPresenter;
+import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.RegistrationPresenter;
 import com.mw2c.pipboy200011.socialnetwork.presentation.presenter.SplashPresenter;
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity;
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity_MembersInjector;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginFragment;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginFragment_MembersInjector;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.RegistrationFragment;
+import com.mw2c.pipboy200011.socialnetwork.presentation.ui.RegistrationFragment_MembersInjector;
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.SplashActivity;
 import com.mw2c.pipboy200011.socialnetwork.presentation.ui.SplashActivity_MembersInjector;
 import com.mw2c.pipboy200011.socialnetwork.utils.rx.IRxSchedulersUtils;
@@ -29,6 +39,8 @@ import dagger.internal.Preconditions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import retrofit2.Retrofit;
+import ru.terrakok.cicerone.NavigatorHolder;
+import ru.terrakok.cicerone.Router;
 
 @Generated(
   value = "dagger.internal.codegen.ComponentProcessor",
@@ -37,7 +49,11 @@ import retrofit2.Retrofit;
 public final class DaggerApplicationComponent implements ApplicationComponent {
   private Provider<IRxSchedulersUtils> provideRxSchedulersUtilsProvider;
 
+  private Provider<NavigatorHolder> provideNavigatorHolderProvider;
+
   private Provider<Retrofit> provideRetrofitProvider;
+
+  private Provider<Router> provideRouterProvider;
 
   private DaggerApplicationComponent(Builder builder) {
     initialize(builder);
@@ -55,8 +71,14 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   private void initialize(final Builder builder) {
     this.provideRxSchedulersUtilsProvider =
         DoubleCheck.provider(RxModule_ProvideRxSchedulersUtilsFactory.create(builder.rxModule));
+    this.provideNavigatorHolderProvider =
+        DoubleCheck.provider(
+            NavigationModule_ProvideNavigatorHolderFactory.create(builder.navigationModule));
     this.provideRetrofitProvider =
         DoubleCheck.provider(NetworkModule_ProvideRetrofitFactory.create(builder.networkModule));
+    this.provideRouterProvider =
+        DoubleCheck.provider(
+            NavigationModule_ProvideRouterFactory.create(builder.navigationModule));
   }
 
   @Override
@@ -67,6 +89,8 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
   public static final class Builder {
     private RxModule rxModule;
 
+    private NavigationModule navigationModule;
+
     private NetworkModule networkModule;
 
     private Builder() {}
@@ -74,6 +98,9 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
     public ApplicationComponent build() {
       if (rxModule == null) {
         this.rxModule = new RxModule();
+      }
+      if (navigationModule == null) {
+        this.navigationModule = new NavigationModule();
       }
       if (networkModule == null) {
         this.networkModule = new NetworkModule();
@@ -98,6 +125,11 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
 
     public Builder networkModule(NetworkModule networkModule) {
       this.networkModule = Preconditions.checkNotNull(networkModule);
+      return this;
+    }
+
+    public Builder navigationModule(NavigationModule navigationModule) {
+      this.navigationModule = Preconditions.checkNotNull(navigationModule);
       return this;
     }
   }
@@ -203,6 +235,12 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
 
       private Provider<LoginPresenter> provideLoginPresenterProvider;
 
+      private Provider<IRegistrationRepository> provideRegistrationRepositoryProvider;
+
+      private Provider<RegistrationInteractor> provideRegistrationInteractorProvider;
+
+      private Provider<RegistrationPresenter> provideRegistrationPresenterProvider;
+
       private LoginComponentImpl(LoginComponentBuilder builder) {
         initialize(builder);
       }
@@ -222,7 +260,23 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
                 LoginModule_ProvideLoginPresenterFactory.create(
                     builder.loginModule,
                     provideLoginInteractorProvider,
-                    DaggerApplicationComponent.this.provideRxSchedulersUtilsProvider));
+                    DaggerApplicationComponent.this.provideRxSchedulersUtilsProvider,
+                    DaggerApplicationComponent.this.provideRouterProvider));
+        this.provideRegistrationRepositoryProvider =
+            DoubleCheck.provider(
+                LoginModule_ProvideRegistrationRepositoryFactory.create(
+                    builder.loginModule, DaggerApplicationComponent.this.provideRetrofitProvider));
+        this.provideRegistrationInteractorProvider =
+            DoubleCheck.provider(
+                LoginModule_ProvideRegistrationInteractorFactory.create(
+                    builder.loginModule, provideRegistrationRepositoryProvider));
+        this.provideRegistrationPresenterProvider =
+            DoubleCheck.provider(
+                LoginModule_ProvideRegistrationPresenterFactory.create(
+                    builder.loginModule,
+                    provideRegistrationInteractorProvider,
+                    DaggerApplicationComponent.this.provideRxSchedulersUtilsProvider,
+                    DaggerApplicationComponent.this.provideRouterProvider));
       }
 
       @Override
@@ -230,10 +284,34 @@ public final class DaggerApplicationComponent implements ApplicationComponent {
         injectLoginActivity(activity);
       }
 
+      @Override
+      public void inject(LoginFragment fragment) {
+        injectLoginFragment(fragment);
+      }
+
+      @Override
+      public void inject(RegistrationFragment fragment) {
+        injectRegistrationFragment(fragment);
+      }
+
       @CanIgnoreReturnValue
       private LoginActivity injectLoginActivity(LoginActivity instance) {
-        LoginActivity_MembersInjector.injectMLoginPresenter(
+        LoginActivity_MembersInjector.injectMNavigatorHolder(
+            instance, DaggerApplicationComponent.this.provideNavigatorHolderProvider.get());
+        return instance;
+      }
+
+      @CanIgnoreReturnValue
+      private LoginFragment injectLoginFragment(LoginFragment instance) {
+        LoginFragment_MembersInjector.injectMLoginPresenter(
             instance, provideLoginPresenterProvider.get());
+        return instance;
+      }
+
+      @CanIgnoreReturnValue
+      private RegistrationFragment injectRegistrationFragment(RegistrationFragment instance) {
+        RegistrationFragment_MembersInjector.injectMRegistrationPresenter(
+            instance, provideRegistrationPresenterProvider.get());
         return instance;
       }
     }

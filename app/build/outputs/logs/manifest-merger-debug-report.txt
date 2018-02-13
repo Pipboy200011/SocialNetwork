@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/0eea34fb8bdc04e83f7a0feb0b0553dc/AndroidManifest.xml:15:1-21:12
 MERGED from [android.arch.persistence.room:rxjava2:1.0.0] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/rxjava2-1.0.0.aar/31ff4fb39e5031e21cb49a231fbefdf8/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/818251e284094224f5a840dbc130c217/AndroidManifest.xml:17:1-31:12
@@ -23,25 +23,29 @@ MERGED from [com.android.support:support-media-compat:26.1.0] /Users/pavelapanov
 MERGED from [com.android.support:support-compat:26.1.0] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d37c0807b24dd948042cfc5c353e071e/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/471c717f87e526211390a6fd1c12d131/AndroidManifest.xml:17:1-30:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/df3c64971b5f2f30c3f8fe3ee4190222/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
 		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:11-56
 		INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
 		INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-24:12
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:2:1-26:12
 		INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:3:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:5:5-66
+	android:name
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:5:5-22:19
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:7:5-24:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/818251e284094224f5a840dbc130c217/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/818251e284094224f5a840dbc130c217/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a300045a0a78c4648617b6622e55969a/AndroidManifest.xml:9:5-20
@@ -69,37 +73,37 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/pavelapanovskiy/.gradl
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/df3c64971b5f2f30c3f8fe3ee4190222/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] /Users/pavelapanovskiy/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.6.1.aar/df3c64971b5f2f30c3f8fe3ee4190222/AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:9:9-41
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:10:9-54
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:8:9-43
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:7:9-35
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:12:9-68
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:14:9-68
 	android:name
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:6:9-38
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:8:9-38
 activity#com.mw2c.pipboy200011.socialnetwork.presentation.ui.SplashActivity
-ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:13:9-19:20
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:13:19-65
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:15:19-65
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:14:13-18:29
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:15:17-68
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:17:17-68
 	android:name
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:15:25-66
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:17:17-76
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:19:17-76
 	android:name
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:17:27-74
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:19:27-74
 activity#com.mw2c.pipboy200011.socialnetwork.presentation.ui.LoginActivity
-ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:20:9-21:20
+ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:22:9-23:20
 	android:name
-		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:20:19-64
+		ADDED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml:22:19-64
 uses-sdk
 INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/pavelapanovskiy/AndroidStudioProjects/SocialNetworkOld/app/src/main/AndroidManifest.xml

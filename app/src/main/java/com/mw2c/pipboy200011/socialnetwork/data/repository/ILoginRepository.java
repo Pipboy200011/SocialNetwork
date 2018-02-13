@@ -10,5 +10,4 @@ import io.reactivex.Single;
 
 public interface ILoginRepository {
     Single<Login> tryToLogin(String mail, String password);
-
 }

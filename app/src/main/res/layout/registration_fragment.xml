@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mw2c.pipboy200011.socialnetwork.presentation.ui.RegistrationActivity">
+
+    <ImageView
+        android:id="@+id/registration_image_view"
+        android:layout_width="@dimen/size_100_dp"
+        android:layout_height="@dimen/size_100_dp"
+        android:layout_marginTop="@dimen/size_72_dp"
+        android:contentDescription="@null"
+        android:src="@mipmap/splash_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/registration_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="@dimen/size_56_dp"
+        android:layout_marginRight="@dimen/size_56_dp"
+        android:layout_marginTop="@dimen/size_16_dp"
+        android:hint="@string/name"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/registration_image_view"/>
+
+    <EditText
+        android:id="@+id/registration_surname_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="@dimen/size_56_dp"
+        android:layout_marginRight="@dimen/size_56_dp"
+        android:layout_marginTop="@dimen/size_8_dp"
+        android:hint="@string/surname"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/registration_name_edit_text"/>
+
+    <EditText
+        android:id="@+id/registration_mail_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="@dimen/size_56_dp"
+        android:layout_marginRight="@dimen/size_56_dp"
+        android:layout_marginTop="@dimen/size_8_dp"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/registration_surname_edit_text"/>
+
+    <EditText
+        android:id="@+id/registration_password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="@dimen/size_56_dp"
+        android:layout_marginRight="@dimen/size_56_dp"
+        android:layout_marginTop="@dimen/size_8_dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/registration_mail_edit_text"/>
+
+    <Button
+        android:id="@+id/registration_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_56_dp"
+        android:layout_marginRight="@dimen/size_56_dp"
+        android:layout_marginTop="@dimen/size_8_dp"
+        android:text="@string/register"
+        app:layout_constraintTop_toBottomOf="@id/registration_password_edit_text"/>
+
+    <ProgressBar
+        android:id="@+id/registration_progress"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/size_2_dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/registration_button"
+        app:layout_constraintEnd_toEndOf="@+id/registration_button"
+        app:layout_constraintStart_toStartOf="@+id/registration_button"
+        app:layout_constraintTop_toTopOf="@+id/registration_button"/>
+
+</android.support.constraint.ConstraintLayout>
